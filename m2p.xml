@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pdi-m2p>
+    <dev>
+        <name>dev</name>
+        <user>joe</user>
+        <pass>password</pass>
+    </dev>
+    <acc>
+        <name>acc</name>
+        <user>joe</user>
+        <pass>password</pass>
+    </acc>
+    <prd>
+        <name>prd</name>
+        <user>joe</user>
+        <pass>password</pass>
+    </prd>
+</pdi-m2p>
