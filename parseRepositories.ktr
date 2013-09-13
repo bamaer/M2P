@@ -7,11 +7,16 @@
     <trans_version/>
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
-    <directory>&#47;</directory>
+    <directory>&#x2f;</directory>
     <parameters>
         <parameter>
-            <name>DIRECTION</name>
-            <default_value/>
+            <name>ENV_SRC</name>
+            <default_value>prd</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>ENV_TRG</name>
+            <default_value>dev</default_value>
             <description/>
         </parameter>
     </parameters>
@@ -63,280 +68,36 @@
     <partitionschemas>
     </partitionschemas>
     <slaveservers>
+         <slaveserver><name>CARTE</name><hostname>&#x24;&#x7b;CARTE_HOSTNAME&#x7d;</hostname><port>&#x24;&#x7b;CARTE_PORT&#x7d;</port><webAppName/><username>&#x24;&#x7b;CARTE_USER&#x7d;</username><password>&#x24;&#x7b;CARTE_PWD&#x7d;</password><proxy_hostname>&#x24;&#x7b;CARTE_PROXY_HOST&#x7d;</proxy_hostname><proxy_port>&#x24;&#x7b;CARTE_PROXY_PORT&#x7d;</proxy_port><non_proxy_hosts>&#x24;&#x7b;CARTE_NON_PROXY&#x7d;</non_proxy_hosts><master>Y</master></slaveserver>
          <slaveserver><name>cptlx007</name><hostname>cptlx007.cipal.be</hostname><port>10001</port><webAppName/><username>cluster</username><password>Encrypted 2be98afc86aa7f2e4cb1aa265cd86aac8</password><proxy_hostname/><proxy_port/><non_proxy_hosts/><master>Y</master></slaveserver>
          <slaveserver><name>master</name><hostname>oathena.cipal.be</hostname><port>10001</port><webAppName/><username>cluster</username><password>Encrypted 2be98afc86aa7f2e4cb1aa265cd86aac8</password><proxy_hostname/><proxy_port/><non_proxy_hosts/><master>Y</master></slaveserver>
     </slaveservers>
     <clusterschemas>
     </clusterschemas>
   <created_user>-</created_user>
-  <created_date>2011&#47;07&#47;21 13:56:57.001</created_date>
+  <created_date>2011&#x2f;07&#x2f;21 13&#x3a;56&#x3a;57.001</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2011&#47;07&#47;21 13:56:57.001</modified_date>
+  <modified_date>2011&#x2f;07&#x2f;21 13&#x3a;56&#x3a;57.001</modified_date>
   </info>
   <notepads>
   </notepads>
-  <connection>
-    <name>conformed_dm</name>
-    <server/>
-    <type>ORACLE</type>
-    <access>JNDI</access>
-    <database>conformed_dm</database>
-    <port>1521</port>
-    <username/>
-    <password>Encrypted </password>
-    <servername/>
-    <data_tablespace>ATHENA_TABLES</data_tablespace>
-    <index_tablespace>ATHENA_INDEXES</index_tablespace>
-    <attributes>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>1521</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
-  <connection>
-    <name>hera_dwh</name>
-    <server>localhost</server>
-    <type>MYSQL</type>
-    <access>Native</access>
-    <database>hera_dwh</database>
-    <port>3306</port>
-    <username>root</username>
-    <password>Encrypted 2be98afc86aa7f2e4cb79af64d697a1db</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
-      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
-  <connection>
-    <name>Hive</name>
-    <server/>
-    <type>GENERIC</type>
-    <access>Native</access>
-    <database/>
-    <port>1521</port>
-    <username/>
-    <password>Encrypted </password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>CUSTOM_DRIVER_CLASS</code><attribute>org.apache.hadoop.hive.jdbc.HiveDriver</attribute></attribute>
-      <attribute><code>CUSTOM_URL</code><attribute>jdbc:hive:&#47;&#47;localhost:10101&#47;default</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>1521</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
-  <connection>
-    <name>localhost_p</name>
-    <server>localhost</server>
-    <type>POSTGRESQL</type>
-    <access>Native</access>
-    <database>postgres</database>
-    <port>5433</port>
-    <username>postgres</username>
-    <password>Encrypted </password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>EXTRA_OPTION_POSTGRESQL.A</code><attribute>BV</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>5433</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
-  <connection>
-    <name>MySQL</name>
-    <server>localhost</server>
-    <type>MYSQL</type>
-    <access>Native</access>
-    <database>topsites</database>
-    <port>3306</port>
-    <username>root</username>
-    <password>Encrypted </password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
-      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
-  <connection>
-    <name>Neptunus</name>
-    <server>ontw-ora4.int.cipal.be</server>
-    <type>ORACLE</type>
-    <access>Native</access>
-    <database>ACC9</database>
-    <port>1521</port>
-    <username>cipalii</username>
-    <password>Encrypted 2be98afc86aa7f2e4cb79ce73d782aed6</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>1521</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
-  <connection>
-    <name>neptunus_dm</name>
-    <server/>
-    <type>ORACLE</type>
-    <access>JNDI</access>
-    <database>neptunus_dm</database>
-    <port>1521</port>
-    <username/>
-    <password>Encrypted </password>
-    <servername/>
-    <data_tablespace>nepIIdm_tables</data_tablespace>
-    <index_tablespace>nepIIdm_indexes</index_tablespace>
-    <attributes>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>1521</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
-  <connection>
-    <name>neptunus_stg</name>
-    <server/>
-    <type>ORACLE</type>
-    <access>JNDI</access>
-    <database>neptunus_stg</database>
-    <port>1521</port>
-    <username/>
-    <password>Encrypted </password>
-    <servername/>
-    <data_tablespace>nepIIstg_tables</data_tablespace>
-    <index_tablespace>nepIIstg_indexes</index_tablespace>
-    <attributes>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>1521</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
-  <connection>
-    <name>postgres</name>
-    <server>localhost</server>
-    <type>POSTGRESQL</type>
-    <access>Native</access>
-    <database>postgres</database>
-    <port>5433</port>
-    <username>postgres</username>
-    <password>Encrypted </password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>EXTRA_OPTION_POSTGRESQL.A</code><attribute>BV</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>5433</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
-  <connection>
-    <name>SampleData (JNDI)</name>
-    <server/>
-    <type>MYSQL</type>
-    <access>JNDI</access>
-    <database>SampleData</database>
-    <port>1521</port>
-    <username/>
-    <password>Encrypted </password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
-      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>1521</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
-  <connection>
-    <name>SampleData (Native)</name>
-    <server>localhost</server>
-    <type>MYSQL</type>
-    <access>Native</access>
-    <database>sampledata</database>
-    <port>3306</port>
-    <username>root</username>
-    <password>Encrypted 2be98afc86aa7f2e4cb79ce10cc9da0ce</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
-      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
   <order>
-  <hop> <from>Filter rows</from><to>Filter rows 2</to><enabled>Y</enabled> </hop>  <hop> <from>Filter rows 2</from><to>Dummy (do nothing)</to><enabled>Y</enabled> </hop>  <hop> <from>Get data from XML</from><to>Join Rows (cartesian product)</to><enabled>Y</enabled> </hop>  <hop> <from>Get Variables</from><to>Join Rows (cartesian product)</to><enabled>Y</enabled> </hop>  <hop> <from>Join Rows (cartesian product)</from><to>Filter rows</to><enabled>Y</enabled> </hop>  <hop> <from>Filter rows</from><to>Select values 2</to><enabled>Y</enabled> </hop>  <hop> <from>Filter rows 2</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Select values 2</from><to>Set Variables</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>Set Variables</to><enabled>Y</enabled> </hop>  <hop> <from>Set Variables</from><to>Text file output</to><enabled>N</enabled> </hop>  </order>
+  <hop> <from>SRC</from><to>TRG</to><enabled>Y</enabled> </hop>
+  <hop> <from>TRG</from><to>Invalid</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get data from XML</from><to>Join Rows &#x28;cartesian product&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get Variables</from><to>Join Rows &#x28;cartesian product&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Set Variables</from><to>Text file output</to><enabled>N</enabled> </hop>
+  <hop> <from>Join Rows &#x28;cartesian product&#x29;</from><to>lower</to><enabled>Y</enabled> </hop>
+  <hop> <from>lower</from><to>SRC</to><enabled>Y</enabled> </hop>
+  <hop> <from>SRC</from><to>regroup</to><enabled>Y</enabled> </hop>
+  <hop> <from>TRG</from><to>regroup</to><enabled>Y</enabled> </hop>
+  <hop> <from>regroup</from><to>Get TRG</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get TRG</from><to>rename src fields</to><enabled>Y</enabled> </hop>
+  <hop> <from>rename src fields</from><to>remove null TRG</to><enabled>Y</enabled> </hop>
+  <hop> <from>remove null TRG</from><to>Set Variables</to><enabled>Y</enabled> </hop>
+  </order>
   <step>
-    <name>Dummy (do nothing)</name>
+    <name>Invalid</name>
     <type>Dummy</type>
     <description/>
     <distribute>Y</distribute>
@@ -347,14 +108,14 @@
            </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>400</xloc>
-      <yloc>330</yloc>
+      <xloc>464</xloc>
+      <yloc>323</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Filter rows</name>
+    <name>SRC</name>
     <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -363,26 +124,26 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-<send_true_to>Select values 2</send_true_to>
-<send_false_to>Filter rows 2</send_false_to>
+<send_true_to>regroup</send_true_to>
+<send_false_to>TRG</send_false_to>
     <compare>
 <condition>
  <negated>N</negated>
- <leftvalue>DIRECTION</leftvalue>
- <function>=</function>
- <rightvalue/>
- <value><name>constant</name><type>String</type><text>DEV2ACC</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
+ <leftvalue>ENV_SRC</leftvalue>
+ <function>&#x3d;</function>
+ <rightvalue>name</rightvalue>
+ </condition>
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>400</xloc>
-      <yloc>130</yloc>
+      <xloc>464</xloc>
+      <yloc>123</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Filter rows 2</name>
+    <name>TRG</name>
     <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -391,20 +152,20 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-<send_true_to>Select values</send_true_to>
-<send_false_to>Dummy (do nothing)</send_false_to>
+<send_true_to>regroup</send_true_to>
+<send_false_to>Invalid</send_false_to>
     <compare>
 <condition>
  <negated>N</negated>
- <leftvalue>DIRECTION</leftvalue>
- <function>=</function>
- <rightvalue/>
- <value><name>constant</name><type>String</type><text>ACC2PRD</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
+ <leftvalue>ENV_TRG</leftvalue>
+ <function>&#x3d;</function>
+ <rightvalue>name</rightvalue>
+ </condition>
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>400</xloc>
-      <yloc>220</yloc>
+      <xloc>464</xloc>
+      <yloc>215</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -421,8 +182,8 @@
            </partitioning>
     <fields>
       <field>
-        <name>DIRECTION</name>
-        <variable>${DIRECTION}</variable>
+        <name>ENV_SRC</name>
+        <variable>&#x24;&#x7b;ENV_SRC&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -430,7 +191,19 @@
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>ENV_TRG</name>
+        <variable>&#x24;&#x7b;ENV_TRG&#x7d;</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
       </field>
     </fields>
      <cluster_schema/>
@@ -465,7 +238,7 @@
     <rownum_field/>
     <encoding>UTF-8</encoding>
     <file>
-      <name>${Internal.Transformation.Filename.Directory}&#47;m2p.xml</name>
+      <name>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;m2p-tmp.xml</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -473,8 +246,8 @@
     </file>
     <fields>
       <field>
-        <name>devname</name>
-        <xpath>dev&#47;name</xpath>
+        <name>name</name>
+        <xpath>name</xpath>
         <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>String</type>
@@ -488,8 +261,8 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>devuser</name>
-        <xpath>dev&#47;user</xpath>
+        <name>user</name>
+        <xpath>user</xpath>
         <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>String</type>
@@ -503,98 +276,8 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>devpass</name>
-        <xpath>dev&#47;pass</xpath>
-        <element_type>node</element_type>
-        <result_type>valueof</result_type>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>accname</name>
-        <xpath>acc&#47;name</xpath>
-        <element_type>node</element_type>
-        <result_type>valueof</result_type>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>accuser</name>
-        <xpath>acc&#47;user</xpath>
-        <element_type>node</element_type>
-        <result_type>valueof</result_type>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>accpass</name>
-        <xpath>acc&#47;pass</xpath>
-        <element_type>node</element_type>
-        <result_type>valueof</result_type>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>prdname</name>
-        <xpath>prd&#47;name</xpath>
-        <element_type>node</element_type>
-        <result_type>valueof</result_type>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>prduser</name>
-        <xpath>prd&#47;user</xpath>
-        <element_type>node</element_type>
-        <result_type>valueof</result_type>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>prdpass</name>
-        <xpath>prd&#47;pass</xpath>
+        <name>pass</name>
+        <xpath>pass</xpath>
         <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>String</type>
@@ -609,7 +292,7 @@
       </field>
     </fields>
     <limit>0</limit>
-    <loopxpath>&#47;pdi-m2p</loopxpath>
+    <loopxpath>&#x2f;pdi-m2p&#x2f;env</loopxpath>
     <IsInFields>N</IsInFields>
     <IsAFile>N</IsAFile>
     <XmlField/>
@@ -631,7 +314,7 @@
     </step>
 
   <step>
-    <name>Join Rows (cartesian product)</name>
+    <name>Join Rows &#x28;cartesian product&#x29;</name>
     <type>JoinRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -640,7 +323,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-      <directory>%%java.io.tmpdir%%</directory>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
       <prefix>out</prefix>
       <cache_size>500</cache_size>
       <main/>
@@ -648,108 +331,14 @@
 <condition>
  <negated>N</negated>
  <leftvalue/>
- <function>=</function>
+ <function>&#x3d;</function>
  <rightvalue/>
  </condition>
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>220</xloc>
-      <yloc>130</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Select values</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>      <field>        <name>accname</name>
-        <rename>srcname</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>accuser</name>
-        <rename>srcuser</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>accpass</name>
-        <rename>srcpass</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>prdname</name>
-        <rename>trgname</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>prduser</name>
-        <rename>trguser</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>prdpass</name>
-        <rename>trgpass</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>DIRECTION</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>580</xloc>
-      <yloc>220</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Select values 2</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>      <field>        <name>devname</name>
-        <rename>srcname</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>devuser</name>
-        <rename>srcuser</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>devpass</name>
-        <rename>srcpass</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>accname</name>
-        <rename>trgname</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>accuser</name>
-        <rename>trguser</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>accpass</name>
-        <rename>trgpass</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>DIRECTION</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>580</xloc>
-      <yloc>130</yloc>
+      <yloc>123</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -805,8 +394,8 @@
     <use_formatting>Y</use_formatting>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>690</xloc>
-      <yloc>170</yloc>
+      <xloc>849</xloc>
+      <yloc>323</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -821,8 +410,8 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <separator>;</separator>
-    <enclosure>&quot;</enclosure>
+    <separator>&#x3b;</separator>
+    <enclosure>&#x22;</enclosure>
     <enclosure_forced>N</enclosure_forced>
     <enclosure_fix_disabled>N</enclosure_fix_disabled>
     <header>N</header>
@@ -835,7 +424,7 @@
     <fileNameField/>
     <create_parent_folder>N</create_parent_folder>
     <file>
-      <name>&#47;tmp&#47;file</name>
+      <name>&#x2f;tmp&#x2f;file</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
@@ -964,8 +553,225 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>850</xloc>
-      <yloc>170</yloc>
+      <xloc>967</xloc>
+      <yloc>323</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>lower</name>
+    <type>StringOperations</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>name</in_stream_name>
+        <out_stream_name/>
+        <trim_type>none</trim_type>
+        <lower_upper>lower</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>user</in_stream_name>
+        <out_stream_name/>
+        <trim_type>none</trim_type>
+        <lower_upper>lower</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>pass</in_stream_name>
+        <out_stream_name/>
+        <trim_type>none</trim_type>
+        <lower_upper>lower</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>ENV_SRC</in_stream_name>
+        <out_stream_name/>
+        <trim_type>none</trim_type>
+        <lower_upper>lower</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>ENV_TRG</in_stream_name>
+        <out_stream_name/>
+        <trim_type>none</trim_type>
+        <lower_upper>lower</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>356</xloc>
+      <yloc>123</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>regroup</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>600</xloc>
+      <yloc>123</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Get TRG</name>
+    <type>AnalyticQuery</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <group>
+        <field>
+          <name>ENV_SRC</name>
+        </field>
+      </group>
+      <fields>
+        <field>
+          <aggregate>trgname</aggregate>
+          <subject>name</subject>
+          <type>LEAD</type>
+          <valuefield>1</valuefield>
+        </field>
+        <field>
+          <aggregate>trguser</aggregate>
+          <subject>user</subject>
+          <type>LEAD</type>
+          <valuefield>1</valuefield>
+        </field>
+        <field>
+          <aggregate>trgpass</aggregate>
+          <subject>pass</subject>
+          <type>LEAD</type>
+          <valuefield>1</valuefield>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>701</xloc>
+      <yloc>123</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>rename src fields</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>name</name>
+        <rename>srcname</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>user</name>
+        <rename>srcuser</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>pass</name>
+        <rename>srcpass</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>trgname</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>trguser</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>trgpass</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>701</xloc>
+      <yloc>215</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>remove null TRG</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to/>
+<send_false_to/>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>trgname</leftvalue>
+ <function>IS NOT NULL</function>
+ <rightvalue/>
+ </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>701</xloc>
+      <yloc>323</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

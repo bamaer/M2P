@@ -5,11 +5,11 @@
     <extended_description/>
     <job_version/>
     <job_status>0</job_status>
-  <directory>&#47;home&#47;joe</directory>
+  <directory>&#x2f;</directory>
   <created_user>-</created_user>
-  <created_date>2011&#47;07&#47;08 22:22:48.259</created_date>
+  <created_date>2011&#x2f;07&#x2f;08 22&#x3a;22&#x3a;48.259</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2011&#47;07&#47;08 22:22:48.259</modified_date>
+  <modified_date>2011&#x2f;07&#x2f;08 22&#x3a;22&#x3a;48.259</modified_date>
     <parameters>
         <parameter>
             <name>COMMENT</name>
@@ -19,7 +19,17 @@
         <parameter>
             <name>DIRECTION</name>
             <default_value>DEV2ACC</default_value>
-            <description>The direction of the migration. Possible values are DEV2ACC and ACC2PRD (case insensitive)</description>
+            <description>The direction of the migration. Possible values are DEV2ACC and ACC2PRD &#x28;case insensitive&#x29;. Deprecated. </description>
+        </parameter>
+        <parameter>
+            <name>ENV_SRC</name>
+            <default_value/>
+            <description>The environment to export ETL code from.</description>
+        </parameter>
+        <parameter>
+            <name>ENV_TRG</name>
+            <default_value/>
+            <description>THe environment to import ETL code into.</description>
         </parameter>
         <parameter>
             <name>RULES_FILE</name>
@@ -28,21 +38,22 @@
         </parameter>
         <parameter>
             <name>SRCFOLDER</name>
-            <default_value>&#47;public&#47;Hera</default_value>
-            <description>The folder that needs to be exported from the source repository. Defaults to &#47;. </description>
+            <default_value>&#x2f;public&#x2f;Hera</default_value>
+            <description>The folder that needs to be exported from the source repository. Defaults to &#x2f;. </description>
         </parameter>
         <parameter>
             <name>TMP_FOLDER</name>
-            <default_value>&#47;tmp&#47;m2p</default_value>
-            <description>A folder where the export will be stored intermediately. If not used, a temporary folder will be created in the executing user’s home</description>
+            <default_value>&#x2f;tmp&#x2f;m2p</default_value>
+            <description>A folder where the export will be stored intermediately. If not used, a temporary folder will be created in the executing user&#x2019;s home</description>
         </parameter>
         <parameter>
             <name>TRGFOLDER</name>
-            <default_value>&#47;</default_value>
-            <description>The folder in the target repository that the export needs to be imported in. Defaults to &#47;. </description>
+            <default_value>&#x2f;</default_value>
+            <description>The folder in the target repository that the export needs to be imported in. Defaults to &#x2f;. </description>
         </parameter>
     </parameters>
     <slaveservers>
+         <slaveserver><name>CARTE</name><hostname>&#x24;&#x7b;CARTE_HOSTNAME&#x7d;</hostname><port>&#x24;&#x7b;CARTE_PORT&#x7d;</port><webAppName/><username>&#x24;&#x7b;CARTE_USER&#x7d;</username><password>&#x24;&#x7b;CARTE_PWD&#x7d;</password><proxy_hostname>&#x24;&#x7b;CARTE_PROXY_HOST&#x7d;</proxy_hostname><proxy_port>&#x24;&#x7b;CARTE_PROXY_PORT&#x7d;</proxy_port><non_proxy_hosts>&#x24;&#x7b;CARTE_NON_PROXY&#x7d;</non_proxy_hosts><master>Y</master></slaveserver>
     </slaveservers>
 <job-log-table><connection/>
 <schema/>
@@ -90,7 +101,7 @@
       <type>TRANS</type>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>${Internal.Job.Filename.Directory}&#47;parseRepositories.ktr</filename>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;parseRepositories.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -109,6 +120,7 @@
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
       <parameters>        <pass_all_parameters>Y</pass_all_parameters>
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
@@ -141,13 +153,13 @@
       <name>Export Source Repo Folder</name>
       <description/>
       <type>EXPORT_REPOSITORY</type>
-      <repositoryname>${SRCNAME}</repositoryname>
-      <username>${SRCUSER}</username>
-      <password>${SRCPASS}</password>
-      <targetfilename>${TMP_FOLDER}&#47;export.xml</targetfilename>
+      <repositoryname>&#x24;&#x7b;SRCNAME&#x7d;</repositoryname>
+      <username>&#x24;&#x7b;SRCUSER&#x7d;</username>
+      <password>&#x24;&#x7b;SRCPASS&#x7d;</password>
+      <targetfilename>&#x24;&#x7b;TMP_FOLDER&#x7d;&#x2f;export.xml</targetfilename>
       <iffileexists>if_file_exists_overwrite</iffileexists>
       <export_type>export_one_folder</export_type>
-      <directoryPath>${SRCFOLDER}</directoryPath>
+      <directoryPath>&#x24;&#x7b;SRCFOLDER&#x7d;</directoryPath>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <SpecifyFormat>N</SpecifyFormat>
@@ -169,7 +181,7 @@
       <type>SIMPLE_EVAL</type>
       <valuetype>variable</valuetype>
       <fieldname/>
-      <variablename>${OS}</variablename>
+      <variablename>&#x24;&#x7b;OS&#x7d;</variablename>
       <fieldtype>string</fieldtype>
       <mask/>
       <comparevalue>Linux</comparevalue>
@@ -186,12 +198,12 @@
       <yloc>110</yloc>
       </entry>
     <entry>
-      <name>Windows? Nah...</name>
+      <name>Windows&#x3f; Nah...</name>
       <description/>
       <type>SIMPLE_EVAL</type>
       <valuetype>variable</valuetype>
       <fieldname/>
-      <variablename>${OS}</variablename>
+      <variablename>&#x24;&#x7b;OS&#x7d;</variablename>
       <fieldtype>string</fieldtype>
       <mask/>
       <comparevalue>Windows</comparevalue>
@@ -208,7 +220,7 @@
       <yloc>220</yloc>
       </entry>
     <entry>
-      <name>Get yourself a Linux box!</name>
+      <name>Get yourself a Linux box&#x21;</name>
       <description/>
       <type>ABORT</type>
       <message/>
@@ -222,8 +234,8 @@
       <name>Import Exported Repository</name>
       <description/>
       <type>SHELL</type>
-      <filename>${Internal.Job.Filename.Directory}&#47;m2p.sh</filename>
-      <work_directory>${user.dir}</work_directory>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;m2p.sh</filename>
+      <work_directory>&#x24;&#x7b;user.dir&#x7d;</work_directory>
       <arg_from_previous>N</arg_from_previous>
       <exec_per_row>N</exec_per_row>
       <set_logfile>N</set_logfile>
@@ -235,14 +247,14 @@
       <insertScript>N</insertScript>
       <script/>
       <loglevel>Basic</loglevel>
-      <argument0>${WORKING_DIR}</argument0>
-      <argument1>${TRGNAME}</argument1>
-      <argument2>${TRGUSER}</argument2>
-      <argument3>${TRGPASS}</argument3>
-      <argument4>${TRGFOLDER}</argument4>
-      <argument5>${TMP_FOLDER}</argument5>
-      <argument6>${COMMENT}</argument6>
-      <argument7>${RULES_FILE}</argument7>
+      <argument0>&#x24;&#x7b;WORKING_DIR&#x7d;</argument0>
+      <argument1>&#x24;&#x7b;TRGNAME&#x7d;</argument1>
+      <argument2>&#x24;&#x7b;TRGUSER&#x7d;</argument2>
+      <argument3>&#x24;&#x7b;TRGPASS&#x7d;</argument3>
+      <argument4>&#x24;&#x7b;TRGFOLDER&#x7d;</argument4>
+      <argument5>&#x24;&#x7b;TMP_FOLDER&#x7d;</argument5>
+      <argument6>&#x24;&#x7b;COMMENT&#x7d;</argument6>
+      <argument7>&#x24;&#x7b;RULES_FILE&#x7d;</argument7>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
@@ -255,7 +267,7 @@
       <type>TRANS</type>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>${Internal.Job.Filename.Directory}&#47;parseParams.ktr</filename>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;parseParams.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -274,6 +286,7 @@
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
       <parameters>        <pass_all_parameters>Y</pass_all_parameters>
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
@@ -293,7 +306,7 @@
       <yloc>380</yloc>
       </entry>
     <entry>
-      <name>Cleanup: Delete TMP_FOLDER</name>
+      <name>Cleanup&#x3a; Delete TMP_FOLDER</name>
       <description/>
       <type>DELETE_FOLDERS</type>
       <arg_from_previous>N</arg_from_previous>
@@ -301,7 +314,7 @@
       <limit_folders>10</limit_folders>
       <fields>
         <field>
-          <name>${TMP_FOLDER}</name>
+          <name>&#x24;&#x7b;TMP_FOLDER&#x7d;</name>
         </field>
       </fields>
       <parallel>N</parallel>
@@ -341,7 +354,7 @@
     </hop>
     <hop>
       <from>Linux</from>
-      <to>Windows? Nah...</to>
+      <to>Windows&#x3f; Nah...</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -349,8 +362,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Windows? Nah...</from>
-      <to>Get yourself a Linux box!</to>
+      <from>Windows&#x3f; Nah...</from>
+      <to>Get yourself a Linux box&#x21;</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -395,7 +408,7 @@
     </hop>
     <hop>
       <from>Import Exported Repository</from>
-      <to>Cleanup: Delete TMP_FOLDER</to>
+      <to>Cleanup&#x3a; Delete TMP_FOLDER</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -403,7 +416,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Cleanup: Delete TMP_FOLDER</from>
+      <from>Cleanup&#x3a; Delete TMP_FOLDER</from>
       <to>Success</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -423,16 +436,7 @@
   </hops>
   <notepads>
     <notepad>
-      <note>#####
-TODO:
-#####
-- improve m2p.sh 
-- rules file as parameter
-- handle coe
-- handle multiple folders (limitdir?)
-- comment 
-- version 
-- exclude folders</note>
+      <note>&#x23;&#x23;&#x23;&#x23;&#x23;&#xa;TODO&#x3a;&#xa;&#x23;&#x23;&#x23;&#x23;&#x23;&#xa;- improve m2p.sh &#xa;- rules file as parameter&#xa;- handle coe&#xa;- handle multiple folders &#x28;limitdir&#x3f;&#x29;&#xa;- comment &#xa;- version &#xa;- exclude folders</note>
       <xloc>190</xloc>
       <yloc>630</yloc>
       <width>238</width>

@@ -7,12 +7,22 @@
     <trans_version/>
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
-    <directory>&#47;</directory>
+    <directory>&#x2f;</directory>
     <parameters>
         <parameter>
             <name>DIRECTION</name>
             <default_value/>
-            <description>The direction of the migration. Possible values are DEV2ACC and ACC2PRD (case insensitive)</description>
+            <description>The direction of the migration. Possible values are DEV2ACC and ACC2PRD &#x28;case insensitive&#x29;</description>
+        </parameter>
+        <parameter>
+            <name>ENV_SRC</name>
+            <default_value/>
+            <description>The environment to export ETL code from.</description>
+        </parameter>
+        <parameter>
+            <name>ENV_TRG</name>
+            <default_value/>
+            <description>THe environment to import ETL code into.</description>
         </parameter>
         <parameter>
             <name>RULES_FILE</name>
@@ -22,7 +32,7 @@
         <parameter>
             <name>TMP_FOLDER</name>
             <default_value/>
-            <description>A folder where the export will be stored intermediately. If not used, a temporary folder will be created in the executing user’s home</description>
+            <description>A folder where the export will be stored intermediately. If not used, a temporary folder will be created in the executing user&#x2019;s home</description>
         </parameter>
     </parameters>
     <log>
@@ -73,18 +83,77 @@
     <partitionschemas>
     </partitionschemas>
     <slaveservers>
+         <slaveserver><name>CARTE</name><hostname>&#x24;&#x7b;CARTE_HOSTNAME&#x7d;</hostname><port>&#x24;&#x7b;CARTE_PORT&#x7d;</port><webAppName/><username>&#x24;&#x7b;CARTE_USER&#x7d;</username><password>&#x24;&#x7b;CARTE_PWD&#x7d;</password><proxy_hostname>&#x24;&#x7b;CARTE_PROXY_HOST&#x7d;</proxy_hostname><proxy_port>&#x24;&#x7b;CARTE_PROXY_PORT&#x7d;</proxy_port><non_proxy_hosts>&#x24;&#x7b;CARTE_NON_PROXY&#x7d;</non_proxy_hosts><master>Y</master></slaveserver>
     </slaveservers>
     <clusterschemas>
     </clusterschemas>
   <created_user>-</created_user>
-  <created_date>2011&#47;07&#47;08 22:36:39.195</created_date>
+  <created_date>2011&#x2f;07&#x2f;08 22&#x3a;36&#x3a;39.195</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2011&#47;07&#47;08 22:36:39.195</modified_date>
+  <modified_date>2011&#x2f;07&#x2f;08 22&#x3a;36&#x3a;39.195</modified_date>
   </info>
   <notepads>
   </notepads>
   <order>
-  <hop> <from>Check Directions</from><to>Incorrect Direction Log</to><enabled>Y</enabled> </hop>  <hop> <from>Incorrect Direction Log</from><to>Incorrect Direction</to><enabled>Y</enabled> </hop>  <hop> <from>Check Required Fields</from><to>Missing Fields Log</to><enabled>Y</enabled> </hop>  <hop> <from>Missing Fields Log</from><to>Missing Field</to><enabled>Y</enabled> </hop>  <hop> <from>Parameters OK</from><to>Set Variables</to><enabled>Y</enabled> </hop>  <hop> <from>Check Tmp Folder</from><to>Set Tmp Folder</to><enabled>Y</enabled> </hop>  <hop> <from>Get Variables</from><to>Check Required Fields</to><enabled>Y</enabled> </hop>  <hop> <from>Check Required Fields</from><to>Check Directions</to><enabled>Y</enabled> </hop>  <hop> <from>Check Directions</from><to>Check Tmp Folder</to><enabled>Y</enabled> </hop>  <hop> <from>Check Tmp Folder</from><to>Check Rules File</to><enabled>Y</enabled> </hop>  <hop> <from>Check Rules File</from><to>Parameters OK</to><enabled>Y</enabled> </hop>  <hop> <from>Set Tmp Folder</from><to>Check Rules File</to><enabled>Y</enabled> </hop>  <hop> <from>Check Rules File</from><to>Calculator</to><enabled>Y</enabled> </hop>  <hop> <from>Calculator</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>Parameters OK</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>Check Required Fields</from><to>Missing Fields Log</to><enabled>Y</enabled> </hop>
+  <hop> <from>Missing Fields Log</from><to>Missing Field</to><enabled>Y</enabled> </hop>
+  <hop> <from>Parameters OK</from><to>Set Variables</to><enabled>Y</enabled> </hop>
+  <hop> <from>Check Tmp Folder</from><to>Set Tmp Folder</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get Variables</from><to>Check Required Fields</to><enabled>Y</enabled> </hop>
+  <hop> <from>Check Tmp Folder</from><to>Check Rules File</to><enabled>Y</enabled> </hop>
+  <hop> <from>Check Rules File</from><to>Parameters OK</to><enabled>Y</enabled> </hop>
+  <hop> <from>Set Tmp Folder</from><to>Check Rules File</to><enabled>Y</enabled> </hop>
+  <hop> <from>Check Rules File</from><to>Calculator</to><enabled>Y</enabled> </hop>
+  <hop> <from>Calculator</from><to>Select values</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values</from><to>Parameters OK</to><enabled>Y</enabled> </hop>
+  <hop> <from>Check Required Fields</from><to>Check Tmp Folder</to><enabled>Y</enabled> </hop>
+  </order>
+  <step>
+    <name>Calculator</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <calculation><field_name>TMP</field_name>
+<calc_type>CONSTANT</calc_type>
+<field_a>&#x2f;rules.xml</field_a>
+<field_b/>
+<field_c/>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>TMP_RULES_FILE</field_name>
+<calc_type>ADD</calc_type>
+<field_a>M2P_HOME</field_a>
+<field_b>TMP</field_b>
+<field_c/>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>582</xloc>
+      <yloc>320</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
   <step>
     <name>Check Required Fields</name>
     <type>FilterRows</type>
@@ -95,7 +164,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-<send_true_to>Check Directions</send_true_to>
+<send_true_to>Check Tmp Folder</send_true_to>
 <send_false_to>Missing Fields Log</send_false_to>
     <compare>
 <condition>
@@ -107,12 +176,54 @@
    <function>IS NOT NULL</function>
    <rightvalue/>
    </condition>
+  <condition>
+   <negated>N</negated>
+   <operator>AND</operator>
+   <leftvalue>ENV_SRC</leftvalue>
+   <function>IS NOT NULL</function>
+   <rightvalue/>
+   </condition>
+  <condition>
+   <negated>N</negated>
+   <operator>AND</operator>
+   <leftvalue>ENV_TRG</leftvalue>
+   <function>IS NOT NULL</function>
+   <rightvalue/>
+   </condition>
   </conditions>
  </condition>
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>250</xloc>
+      <yloc>190</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Check Rules File</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to>Parameters OK</send_true_to>
+<send_false_to>Calculator</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>RULES_FILE</leftvalue>
+ <function>IS NOT NULL</function>
+ <rightvalue/>
+ </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>582</xloc>
       <yloc>190</yloc>
       <draw>Y</draw>
       </GUI>
@@ -140,47 +251,7 @@
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>630</xloc>
-      <yloc>190</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Check Directions</name>
-    <type>FilterRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<send_true_to>Check Tmp Folder</send_true_to>
-<send_false_to>Incorrect Direction Log</send_false_to>
-    <compare>
-<condition>
- <negated>N</negated>
- <conditions>
-  <condition>
-   <negated>N</negated>
-   <leftvalue>DIRECTION</leftvalue>
-   <function>=</function>
-   <rightvalue/>
-   <value><name>constant</name><type>String</type><text>DEV2ACC</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
-  <condition>
-   <negated>N</negated>
-   <operator>OR</operator>
-   <leftvalue>DIRECTION</leftvalue>
-   <function>=</function>
-   <rightvalue/>
-   <value><name>constant</name><type>String</type><text>ACC2PRD</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
-  </conditions>
- </condition>
-    </compare>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>460</xloc>
+      <xloc>412</xloc>
       <yloc>190</yloc>
       <draw>Y</draw>
       </GUI>
@@ -198,20 +269,8 @@
            </partitioning>
     <fields>
       <field>
-        <name>DIRECTION</name>
-        <variable>${DIRECTION}</variable>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
         <name>TMP_FOLDER</name>
-        <variable>${TMP_FOLDER}</variable>
+        <variable>&#x24;&#x7b;TMP_FOLDER&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -223,7 +282,7 @@
       </field>
       <field>
         <name>TMP_FOLDER_EMPTY</name>
-        <variable>${user.home}&#47;.tmp</variable>
+        <variable>&#x24;&#x7b;user.home&#x7d;&#x2f;.tmp</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -235,7 +294,7 @@
       </field>
       <field>
         <name>OS</name>
-        <variable>${os.name}</variable>
+        <variable>&#x24;&#x7b;os.name&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -247,7 +306,7 @@
       </field>
       <field>
         <name>WORKING_DIR</name>
-        <variable>${user.dir}</variable>
+        <variable>&#x24;&#x7b;user.dir&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -259,7 +318,7 @@
       </field>
       <field>
         <name>USER_HOME</name>
-        <variable>${user.home}</variable>
+        <variable>&#x24;&#x7b;user.home&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -271,7 +330,7 @@
       </field>
       <field>
         <name>RULES_FILE</name>
-        <variable>${RULES_FILE}</variable>
+        <variable>&#x24;&#x7b;RULES_FILE&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -283,8 +342,32 @@
       </field>
       <field>
         <name>M2P_HOME</name>
-        <variable>${Internal.Transformation.Filename.Directory}</variable>
-        <type>-</type>
+        <variable>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>ENV_SRC</name>
+        <variable>&#x24;&#x7b;ENV_SRC&#x7d;</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>ENV_TRG</name>
+        <variable>&#x24;&#x7b;ENV_TRG&#x7d;</variable>
+        <type>String</type>
         <format/>
         <currency/>
         <decimal/>
@@ -298,50 +381,6 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>100</xloc>
       <yloc>190</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Incorrect Direction</name>
-    <type>Abort</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-      <row_threshold>0</row_threshold>
-      <message/>
-      <always_log_rows>Y</always_log_rows>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>460</xloc>
-      <yloc>440</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Incorrect Direction Log</name>
-    <type>WriteToLog</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-      <loglevel>log_level_basic</loglevel>
-      <displayHeader>Y</displayHeader>
-      <logmessage/>
-    <fields>
-      </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>460</xloc>
-      <yloc>320</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -407,163 +446,8 @@
       </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>990</xloc>
+      <xloc>772</xloc>
       <yloc>190</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Set Tmp Folder</name>
-    <type>SetValueField</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>
-      <field>
-        <name>TMP_FOLDER</name>
-        <replaceby>TMP_FOLDER_EMPTY</replaceby>
-        </field>
-      </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>630</xloc>
-      <yloc>320</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Set Variables</name>
-    <type>SetVariable</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>
-      <field>
-        <field_name>DIRECTION</field_name>
-        <variable_name>DIRECTION</variable_name>
-        <variable_type>ROOT_JOB</variable_type>
-        <default_value/>
-        </field>
-      <field>
-        <field_name>TMP_FOLDER</field_name>
-        <variable_name>TMP_FOLDER</variable_name>
-        <variable_type>ROOT_JOB</variable_type>
-        <default_value/>
-        </field>
-      <field>
-        <field_name>USER_HOME</field_name>
-        <variable_name>USER_HOME</variable_name>
-        <variable_type>ROOT_JOB</variable_type>
-        <default_value/>
-        </field>
-      <field>
-        <field_name>OS</field_name>
-        <variable_name>OS</variable_name>
-        <variable_type>ROOT_JOB</variable_type>
-        <default_value/>
-        </field>
-      <field>
-        <field_name>WORKING_DIR</field_name>
-        <variable_name>WORKING_DIR</variable_name>
-        <variable_type>ROOT_JOB</variable_type>
-        <default_value/>
-        </field>
-      <field>
-        <field_name>RULES_FILE</field_name>
-        <variable_name>RULES_FILE</variable_name>
-        <variable_type>JVM</variable_type>
-        <default_value/>
-        </field>
-      </fields>
-    <use_formatting>Y</use_formatting>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1140</xloc>
-      <yloc>190</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Check Rules File</name>
-    <type>FilterRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<send_true_to>Parameters OK</send_true_to>
-<send_false_to>Calculator</send_false_to>
-    <compare>
-<condition>
- <negated>N</negated>
- <leftvalue>RULES_FILE</leftvalue>
- <function>IS NOT NULL</function>
- <rightvalue/>
- </condition>
-    </compare>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>800</xloc>
-      <yloc>190</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Calculator</name>
-    <type>Calculator</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-       <calculation><field_name>TMP</field_name>
-<calc_type>CONSTANT</calc_type>
-<field_a>&#47;rules.xml</field_a>
-<field_b/>
-<field_c/>
-<value_type>String</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<remove>N</remove>
-<conversion_mask/>
-<decimal_symbol/>
-<grouping_symbol/>
-<currency_symbol/>
-</calculation>
-       <calculation><field_name>TMP_RULES_FILE</field_name>
-<calc_type>ADD</calc_type>
-<field_a>M2P_HOME</field_a>
-<field_b>TMP</field_b>
-<field_c/>
-<value_type>String</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<remove>N</remove>
-<conversion_mask/>
-<decimal_symbol/>
-<grouping_symbol/>
-<currency_symbol/>
-</calculation>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>800</xloc>
-      <yloc>320</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -609,8 +493,95 @@
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>800</xloc>
+      <xloc>582</xloc>
       <yloc>440</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Set Tmp Folder</name>
+    <type>SetValueField</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>TMP_FOLDER</name>
+        <replaceby>TMP_FOLDER_EMPTY</replaceby>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>412</xloc>
+      <yloc>320</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Set Variables</name>
+    <type>SetVariable</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <field_name>TMP_FOLDER</field_name>
+        <variable_name>TMP_FOLDER</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>USER_HOME</field_name>
+        <variable_name>USER_HOME</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>OS</field_name>
+        <variable_name>OS</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>WORKING_DIR</field_name>
+        <variable_name>WORKING_DIR</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>RULES_FILE</field_name>
+        <variable_name>RULES_FILE</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>ENV_SRC</field_name>
+        <variable_name>ENV_SRC</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>ENV_TRG</field_name>
+        <variable_name>ENV_TRG</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+        </field>
+      </fields>
+    <use_formatting>Y</use_formatting>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>922</xloc>
+      <yloc>190</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
