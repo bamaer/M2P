@@ -172,12 +172,6 @@
  <conditions>
   <condition>
    <negated>N</negated>
-   <leftvalue>DIRECTION</leftvalue>
-   <function>IS NOT NULL</function>
-   <rightvalue/>
-   </condition>
-  <condition>
-   <negated>N</negated>
    <operator>AND</operator>
    <leftvalue>ENV_SRC</leftvalue>
    <function>IS NOT NULL</function>
@@ -443,6 +437,33 @@
       <displayHeader>Y</displayHeader>
       <logmessage/>
     <fields>
+      <field>
+        <name>TMP_FOLDER</name>
+        </field>
+      <field>
+        <name>TMP_FOLDER_EMPTY</name>
+        </field>
+      <field>
+        <name>OS</name>
+        </field>
+      <field>
+        <name>WORKING_DIR</name>
+        </field>
+      <field>
+        <name>USER_HOME</name>
+        </field>
+      <field>
+        <name>RULES_FILE</name>
+        </field>
+      <field>
+        <name>M2P_HOME</name>
+        </field>
+      <field>
+        <name>ENV_SRC</name>
+        </field>
+      <field>
+        <name>ENV_TRG</name>
+        </field>
       </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
@@ -462,11 +483,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <fields>      <field>        <name>DIRECTION</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>TMP_FOLDER</name>
+    <fields>      <field>        <name>TMP_FOLDER</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
@@ -486,6 +503,22 @@
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
+      </field>      <field>        <name>M2P_HOME</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>ENV_SRC</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>ENV_TRG</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>TMP</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
       </field>      <field>        <name>TMP_RULES_FILE</name>
         <rename>RULES_FILE</rename>
         <length>-2</length>
@@ -494,7 +527,7 @@
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>582</xloc>
-      <yloc>440</yloc>
+      <yloc>439</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
