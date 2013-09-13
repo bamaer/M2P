@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pdi-m2p>
-    <dev>
+    <env>
         <name>dev</name>
         <user>joe</user>
         <pass>password</pass>
-    </dev>
-    <acc>
+    </env>
+    <env>
         <name>acc</name>
         <user>joe</user>
         <pass>password</pass>
-    </acc>
-    <prd>
+    </env>
+    <env>
         <name>prd</name>
         <user>joe</user>
         <pass>password</pass>
-    </prd>
+    </env>
 </pdi-m2p>
